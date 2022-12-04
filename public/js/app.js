@@ -13,8 +13,8 @@ const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
 
- messageOne.textContent = 'From JavaScript'
- messageTwo.textContent = 'From JavaScript'
+ //messageOne.textContent = 'From JavaScript'
+ //messageTwo.textContent = 'From JavaScript'
 
 weatherForm.addEventListener('submit', (e) =>{
     e.preventDefault()  
@@ -24,8 +24,8 @@ weatherForm.addEventListener('submit', (e) =>{
     messageOne.textcontent = "Loading...."
     messageTwo.textcontent = ''
 
-    
-    fetch('/weather?address='+location).then((response)=>{
+
+    fetch('/weather?address='+location).then((response)=>{   //http://localhost3000/weather?address  for running on local machine
          response.json().then((data)=>{
              if(data.error){
                 messageOne.textcontent = data.error
@@ -35,8 +35,8 @@ weatherForm.addEventListener('submit', (e) =>{
                 messageOne.textcontent = data.location
                 messageTwo.textcontent = data.forecast
 
-                  console.log(data.location)
-                  console.log(data.forecast)
+                  //console.log(data.location)
+                  //console.log(data.forecast)
                   }
          })
     })
