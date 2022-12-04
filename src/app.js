@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()  //express is a kind of function or module which we assign it to the app variable
+const port = process.env.PORT || 3000 
 
 // console.log(__dirname)    //used to find the directory name 
 // console.log(__filename)  //used to find the path of a file 
@@ -118,8 +119,8 @@ app.get('*',(req,res)=>{                  //  * it is a wild card character whic
 })
 
 //{Starting the server in our system}
-app.listen(3000,()=>{                 //Starting the server in our local machine on port 3000
-    console.log("server is up and running!")
+app.listen(port,()=>{                 //Starting the server in our local machine on port 3000
+    console.log("server is up and running! on port "+port)
 })
 
 
